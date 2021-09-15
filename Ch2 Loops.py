@@ -21,9 +21,15 @@ def main():
 #        print(d)
 
 # Use the break and continue statements
-for x in range (5, 10):
-    if (x==7): break
-    print(x)
+# for x in range (5, 10):
+    #if (x==7): break
+    #if (x%2==0): continue # continue = Skip the rest of the execution of this loop
+    #print(x)
 
- if __name__ == "__main__":
+# Using the enumerate() function to get index
+    days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    for i,d in enumerate(days): #Returns both the index of the collection we are looking at and the index of the individual member
+        print(i,d)
+
+if __name__ == "__main__":
      main()
