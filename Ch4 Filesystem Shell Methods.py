@@ -3,7 +3,9 @@
 #
 import os
 from os import path
-import shutil
+import shutil # This is the shell utilities module of python
+from shutil import make_archive
+from zipfile import ZipFile
 
 def main():
     # Make a duplicate of an existing file
@@ -21,11 +23,14 @@ def main():
         # Rename the original file
         # os.rename("newfile.txt", "newfile.txt") # The rename() function renames the file with the first argument as the name to the second argument
 
-        # Now put things into a ZIP archive
-        root_dir, tail = path.split(src)
-        shutil.make_archive("archive", "zip", root_dir)
+        # # Now put things into a ZIP archive
+        # root_dir, tail = path.split(src)
+        # shutil.make_archive("archive", "zip", root_dir)
 
         # More fine-grained control over ZIP files
+        with ZipFile("testzip.zip", "w") as newzip:  # 'with' - This is an object constructor
+            newzip.write("textfile.txt")
+            newzip.write("textfile.txt.bak")
     
 if __name__ == "__main__":
     main()
