@@ -36,12 +36,16 @@ class MyHTMLParser(HTMLParser):
         print("\tAt line: ", pos[0], " position", pos[1])
 
 def main():
-  # instantiate the parser and feed it some HTML
-  parser = MyHTMLParser()
-  f = open("samplehtml.html")
-  if f.mode=='r':
-      contents = f.read()
-      parser.feed(contents)
+    # instantiate the parser and feed it some HTML
+    parser = MyHTMLParser()
+    f = open("samplehtml.html")
+    if f.mode=='r':
+        contents = f.read()
+        parser.feed(contents)
+    
+    print ("Meta tage found: " + str(metacount))
+
+
     
 
 if __name__ == "__main__":
